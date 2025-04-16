@@ -16,21 +16,49 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 - Tooltips for collapsed view, and if there are furthur nestings
 
 --
-## Installation
-### Installing .dll package of LeftMenuPanel.dll
+## Content 
+![image](https://github.com/user-attachments/assets/2ffd1d21-d9ec-4da2-8f45-b53a5bd7d70f)
+# WinFormSideMenuControl Solution
 
-To use the LeftMenuPanel component in your WinForms project:
+This solution contains two projects:
 
-1. Download the latest version of `LeftMenuPanel.dll` from:
-   https://github.com/CoderKinley/Side-Menu-Panel-Library
+## 1. LeftMenuPanelLibrary
 
+This is the actual library project that implements the side menu panel functionality. The library contains:
+
+- Core components for creating customizable side menus in WinForms applications
+- Collapsible menu functionality
+- Icon support via FontAwesome.Sharp
+- Various customization options
+
+## 2. WinFormSideMenuControl
+
+This is a demo application that showcases how to implement and use the LeftMenuPanelLibrary in a real WinForms project. It includes:
+
+- `MenuDemoForm.cs` - A sample form demonstrating the menu panel integration
+- Example of proper implementation and configuration of the library
+- Working demonstration of menu functionality
+
+## Running the Demo Application
+
+After cloning the repository from Bitbucket and opening the solution in Visual Studio:
+
+1. Set the WinFormSideMenuControl project as the startup project
+   - Right-click on the WinFormSideMenuControl project in Solution Explorer
+   - Select "Set as Startup Project"
+2. Press F5 or click the "Start" button to run the demo application
+3. The demo will show a functional implementation of the side menu panel that you can interact with
+
+This provides a practical example of how to integrate the LeftMenuPanelLibrary into your own WinForms applications.
+
+--
 ### Installing Other required Nuget Packages
 
 This Following packages must be installed into your packages
 - `C1.AdoNet.Json`
 - `FontAwesome.Sharp`
 ---
-## 🚀 Installing NuGet Packages
+## Installing NuGet Packages
 To ensure all necessary libraries are available, install the following NuGet packages:
 ---
 ### 1. **C1.AdoNet.Json**
