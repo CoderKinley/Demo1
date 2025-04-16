@@ -89,9 +89,7 @@ You can download the compiled `.dll` file for the Side Menu Panel Library by fol
 1. Go to the GitHub repository:  
    👉 [Side Menu Panel Library](https://github.com/CoderKinley/Side-Menu-Panel-Library)
    
-2. Find the latest release and click on it.
-
-3. Under **Assets**, click on the `.dll` file (e.g., `SideMenuPanel.dll`) to download.
+2. Click On the Code and Download teh Zip File.
 
 ---
 
