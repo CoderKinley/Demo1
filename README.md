@@ -19,17 +19,16 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 ## Installation
 ### Installing .dll package of LeftMenuPanel.dll
 
+To use the LeftMenuPanel component in your WinForms project:
 
-### Installing Other Packages
-# WinFormsApp1
-This is a simple Windows Forms (.NET) application that demonstrates the usage of UI components like panels and buttons, including integration of external NuGet libraries such as:
+1. Download the latest version of `LeftMenuPanel.dll` from:
+   https://github.com/CoderKinley/Side-Menu-Panel-Library
+
+### Installing Other required Nuget Packages
+
+This Following packages must be installed into your packages
 - `C1.AdoNet.Json`
 - `FontAwesome.Sharp`
----
-## 📦 Prerequisites
-- Visual Studio 2019 or later
-- .NET Framework / .NET Core (depending on your project)
-- Internet connection to fetch NuGet packages
 ---
 ## 🚀 Installing NuGet Packages
 To ensure all necessary libraries are available, install the following NuGet packages:
@@ -44,7 +43,6 @@ Or via .NET CLI:
 ```bash
 dotnet add package C1.AdoNet.Json
 ```
-
 ### 2. **FontAwesome.Sharp**
 This package allows you to use FontAwesome icons in your WinForms app.
 #### Install via Package Manager Console:
@@ -246,7 +244,7 @@ The library implements error handling for common scenarios:
 
 
 -------------------------------------------------------------------------------------
-# WinFormsApp1 - LeftMenuPanel Integration
+# WinFormsApp1 - LeftMenuPanel Integration Manually Adding to InitializeComponent
 
 This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
 
@@ -257,22 +255,10 @@ This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary
 - Reference to LeftMenuPanelLibrary (either DLL or project reference)
 - FontAwesome.Sharp NuGet package
 
-## Steps to Add LeftMenuPanel
+## Steps to Add LeftMenuPanel When there is no Drag and Drop leftmenuPanel avaliable
 
 ### 1. Add the Required Libraries
 
-Make sure the following namespaces are added at the top of Form1.Designer.cs:
-
-```csharp
-using LeftMenuPanelLibrary;
-using FontAwesome.Sharp;
-```
-
-Also, add `FontAwesome.Sharp` via NuGet if it's not already present:
-
-```
-Install-Package FontAwesome.Sharp
-```
 
 ### 2. Declare the LeftMenuPanel Control
 
@@ -286,7 +272,28 @@ private LeftMenuPanelLibrary.LeftMenuPanel leftMenuPanel;
 
 Inside the `InitializeComponent` method, before setting up `panel1`, create and configure the `leftMenuPanel`:
 
+The InitializeComponent can be viewed by double clicking on it
 ```csharp
+namespace YourApp
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent(); // Inside of here, if there is no drag and drop file availiable 
+        }
+    }
+```
+
+Next:
+
+```csharp
+
+//
+// leftMenuPanel
+//
+leftMenuPanel = new LeftMenuPanel();
+
 leftMenuPanel = new LeftMenuPanelLibrary.LeftMenuPanel();
 leftMenuPanel.AutoSize = true;
 leftMenuPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -317,8 +324,9 @@ Finally, in the `Form1` constructor or `InitializeComponent`, ensure the control
 this.Controls.Add(panel1); // Main content
 this.Controls.Add(leftMenuPanel); // Left menu panel
 ```
-
+Now after that if you go and look into the design folder you will be able to see the UI just like you are doing the drag and drop component
 ### 6. Build and Run
+
 
 Run the application. You should see:
 * A collapsible left menu on the left.
