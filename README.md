@@ -428,7 +428,51 @@ This library uses a **relational data model** to manage hierarchical menu struct
 
 - Nested children in the `items` table are stored as **JSON arrays** in the `items` field.
   - The parser uses recursive logic (`ParseNestedItems`) to build the full tree structure using parent-child `Path` information.
+## Schema 
+For `menu` and `items`, there are two tables created which will be used 
+## Table Schema
 
+### `menu` Table
+
+| TableName | ColumnName       | OrdinalColumn | Nullable | IsKey | IsUnique | IsReadOnly | DataType       | Size | Creatable | DbType |
+|-----------|------------------|---------------|----------|-------|----------|------------|----------------|------|-----------|--------|
+| menu      | title            |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| menu      | icon             |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| menu      | items            |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| menu      | ParentJsonPath   |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| menu      | _id              |               | FALSE    | TRUE  | TRUE     | TRUE       | System.String  | 0    | FALSE     | 0      |
+
+---
+
+### `items` Table
+
+| TableName | ColumnName       | OrdinalColumn | Nullable | IsKey | IsUnique | IsReadOnly | DataType       | Size | Creatable | DbType |
+|-----------|------------------|---------------|----------|-------|----------|------------|----------------|------|-----------|--------|
+| items     | menu_id          |               | FALSE    | TRUE  | FALSE    | TRUE       | System.String  | 0    | FALSE     | 0      |
+| items     | title            |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| items     | icon             |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| items     | items            |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| items     | ParentJsonPath   |               | TRUE     | FALSE | FALSE    | FALSE      | System.String  | 0    | FALSE     | 16     |
+| items     | _id              |               | FALSE    | TRUE  | TRUE     | TRUE       | System.String  | 0    | FALSE     | 0      |
+
+### 🔗 Relationships
+
+- Each `menu` can contain multiple `items` associated via the `menu_id` field.
+- Both tables store nested items as JSON strings, preserving the original structure from the source.
+
+---
+
+### 📌 Notes
+
+- This model allows for hierarchical menu rendering while maintaining relational database integrity.
+- The schema design enables both flat querying and recursive nesting logic (via JSON in `items`).
+- Primary keys (`_id`) ensure unique identification across both entities.
+
+---
+
+### 📂 Use Case
+
+Ideal for building menu-driven applications such as admin dashboards, dynamic navigators, and CMS tools with structured, nestable menu content.
 ###  Schema Summary
 
 | Table    | Field         | Description                                |
