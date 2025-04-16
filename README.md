@@ -15,9 +15,46 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 - Responsive design with scrollbars when needed
 - Tooltips for collapsed view, and if there are furthur nestings
 
-----
-#Might be Used in Nuget package
+--
+## Installation
+### Installing .dll package of LeftMenuPanel.dll
 
+
+### Installing Other Packages
+# WinFormsApp1
+This is a simple Windows Forms (.NET) application that demonstrates the usage of UI components like panels and buttons, including integration of external NuGet libraries such as:
+- `C1.AdoNet.Json`
+- `FontAwesome.Sharp`
+---
+## 📦 Prerequisites
+- Visual Studio 2019 or later
+- .NET Framework / .NET Core (depending on your project)
+- Internet connection to fetch NuGet packages
+---
+## 🚀 Installing NuGet Packages
+To ensure all necessary libraries are available, install the following NuGet packages:
+---
+### 1. **C1.AdoNet.Json**
+This package provides ADO.NET support for JSON data sources.
+#### Install via Package Manager Console:
+```powershell
+Install-Package C1.AdoNet.Json
+```
+Or via .NET CLI:
+```bash
+dotnet add package C1.AdoNet.Json
+```
+
+### 2. **FontAwesome.Sharp**
+This package allows you to use FontAwesome icons in your WinForms app.
+#### Install via Package Manager Console:
+```powershell
+Install-Package FontAwesome.Sharp
+```
+Or via .NET CLI:
+```bash
+dotnet add package FontAwesome.Sharp
+```
 
 ## Usage
 
