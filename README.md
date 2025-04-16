@@ -80,7 +80,6 @@ After cloning the repository from Bitbucket and opening the solution in Visual S
 
 This provides a practical example of how to integrate the LeftMenuPanelLibrary into your own WinForms applications.
 
---
 ### Installing Other required Nuget Packages
 
 This Following packages must be installed into your packages
@@ -221,7 +220,7 @@ private void LeftMenuPanel_MenuItemClicked(object sender, MenuItemEventArgs e)
 }
 ```
 ---
-# Manually Adding to InitializeComponent 
+## Manually Adding to InitializeComponent 
 
 This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
 
@@ -314,29 +313,25 @@ The menu data should be structured as follows:
 
 ```json
 {
-  "MenuItems": [
+  "menu": [
     {
-      "Id": "1",
-      "Text": "Dashboard",
-      "Icon": "dashboard.png",
-      "SubItems": []
+      "title": "Dashboard",
+      "icon": "dashboard.png",
+      "items": []
     },
     {
-      "Id": "2",
-      "Text": "Users",
-      "Icon": "users.png",
-      "SubItems": [
+      "title": "Users",
+      "icon": "users.png",
+      "items": [
         {
-          "Id": "2.1",
-          "Text": "User Management",
-          "Icon": "user_management.png",
-          "SubItems": []
+          "title": "User Management",
+          "icon": "user_management.png",
+          "items": []
         },
         {
-          "Id": "2.2",
-          "Text": "User Reports",
-          "Icon": "user_reports.png",
-          "SubItems": []
+          "title": "User Reports",
+          "icon": "user_reports.png",
+          "items": []
         }
       ]
     }
