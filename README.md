@@ -19,6 +19,36 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 ## Content 
 ![image](https://github.com/user-attachments/assets/2ffd1d21-d9ec-4da2-8f45-b53a5bd7d70f)
 # WinFormSideMenuControl Solution
+## About the Folder Structure
+# LeftMenuPanelLibrary
+
+This library provides a customizable left-side menu panel component for WinForms applications, structured in a modular and maintainable way.
+
+## 📁 Folder Structure Overview
+
+The project follows a clean, component-oriented folder layout:
+
+- **Controls/**
+  - Contains custom user controls related to the left menu panel UI.
+
+- **Events/**
+  - Includes custom event handlers, delegates, and event-related logic.
+
+- **Interface/**
+  - Defines interfaces to establish contracts between components and promote loose coupling.
+
+- **Models/**
+  - Data structures and models used for representing menu items and configuration.
+
+- **Resources/**
+  - Static assets such as images, icons, or Default JSON files.
+
+- **Services/**
+  - Core services or business logic that power the behavior of the menu panel.
+
+- **LeftMenuPanel.cs**
+  - The main entry point or component that integrates all other parts into a reusable left menu panel.
+
 
 This solution contains two projects:
 
