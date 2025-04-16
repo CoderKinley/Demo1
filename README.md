@@ -79,6 +79,22 @@ After cloning the repository from Bitbucket and opening the solution in Visual S
 
 This provides a practical example of how to integrate the LeftMenuPanelLibrary into your own WinForms applications.
 
+---
+
+## Adding the Library to Your Project
+### How to Download the DLL
+
+You can download the compiled `.dll` file for the Side Menu Panel Library by following these steps:
+
+1. Go to the GitHub repository:  
+   👉 [Side Menu Panel Library](https://github.com/CoderKinley/Side-Menu-Panel-Library)
+   
+2. Find the latest release and click on it.
+
+3. Under **Assets**, click on the `.dll` file (e.g., `SideMenuPanel.dll`) to download.
+
+---
+
 ### Installing Other required Nuget Packages 
 Before building the project following nuget packages must be installed
 
