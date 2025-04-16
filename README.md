@@ -458,6 +458,7 @@ For `menu` and `items`, there are two tables created which will be used
 
 - Each `menu` can contain multiple `items` associated via the `menu_id` field.
 - Both tables store nested items as JSON strings, preserving the original structure from the source.
+- `ParentJsonPath` consist the path of the parent for the submenu items
 
 ---
 
@@ -469,9 +470,6 @@ For `menu` and `items`, there are two tables created which will be used
 
 ---
 
-### 📂 Use Case
-
-Ideal for building menu-driven applications such as admin dashboards, dynamic navigators, and CMS tools with structured, nestable menu content.
 ###  Schema Summary
 
 | Table    | Field         | Description                                |
