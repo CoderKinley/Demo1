@@ -332,3 +332,82 @@ Enable debug logging for troubleshooting:
 menuPanel.EnableDebugLogging = true;
 ```
 
+
+-------------------------------------------------------------------------------------
+# WinFormsApp1 - LeftMenuPanel Integration
+
+This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
+
+## Prerequisites
+
+- Visual Studio
+- .NET 6 or later (or compatible WinForms project)
+- Reference to LeftMenuPanelLibrary (either DLL or project reference)
+- FontAwesome.Sharp NuGet package
+
+## Steps to Add LeftMenuPanel
+
+### 1. Add the Required Libraries
+
+Make sure the following namespaces are added at the top of Form1.Designer.cs:
+
+```csharp
+using LeftMenuPanelLibrary;
+using FontAwesome.Sharp;
+```
+
+Also, add `FontAwesome.Sharp` via NuGet if it's not already present:
+
+```
+Install-Package FontAwesome.Sharp
+```
+
+### 2. Declare the LeftMenuPanel Control
+
+In the `Form1` partial class (inside `Form1.Designer.cs`), declare the `leftMenuPanel` control:
+
+```csharp
+private LeftMenuPanelLibrary.LeftMenuPanel leftMenuPanel;
+```
+
+### 3. Initialize the LeftMenuPanel
+
+Inside the `InitializeComponent` method, before setting up `panel1`, create and configure the `leftMenuPanel`:
+
+```csharp
+leftMenuPanel = new LeftMenuPanelLibrary.LeftMenuPanel();
+leftMenuPanel.AutoSize = true;
+leftMenuPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+leftMenuPanel.CollapsedWidth = 60;
+leftMenuPanel.ExpandedWidth = 200;
+leftMenuPanel.Dock = DockStyle.Left;
+leftMenuPanel.MenuFilePath = "FilePath..."; // Add your actual file path
+leftMenuPanel.MenuImagePath = "Folder Name..."; // Add your actual image folder path
+leftMenuPanel.Name = "leftMenuPanel";
+leftMenuPanel.Size = new Size(227, 450);
+leftMenuPanel.TabIndex = 0;
+```
+
+### 4. Adjust the Main Panel to the Right of the Menu
+
+Modify `panel1` so it docks to fill the remaining space **after** the menu:
+
+```csharp
+panel1.Dock = DockStyle.Fill;
+panel1.Location = new Point(227, 0); // Shift right to leave space for menu
+```
+
+### 5. Add Controls to the Form
+
+Finally, in the `Form1` constructor or `InitializeComponent`, ensure the controls are added in the correct order:
+
+```csharp
+this.Controls.Add(panel1); // Main content
+this.Controls.Add(leftMenuPanel); // Left menu panel
+```
+
+### 6. Build and Run
+
+Run the application. You should see:
+* A collapsible left menu on the left.
+* Main content panel occupying the rest of the form.
