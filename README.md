@@ -224,6 +224,96 @@ private void LeftMenuPanel_MenuItemClicked(object sender, MenuItemEventArgs e)
     MessageBox.Show($"You clicked on: {e.MenuItemName}");
 }
 ```
+---
+# WinFormsApp1 - LeftMenuPanel Integration Manually Adding to InitializeComponent
+
+This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
+
+## Prerequisites
+
+- Visual Studio
+- .NET 6 or later (or compatible WinForms project)
+- Reference to LeftMenuPanelLibrary (either DLL or project reference)
+- FontAwesome.Sharp NuGet package
+
+## Steps to Add LeftMenuPanel When there is no Drag and Drop leftmenuPanel avaliable
+
+### 1. Add the Required Libraries
+
+
+### 2. Declare the LeftMenuPanel Control
+
+In the `Form1` partial class (inside `Form1.Designer.cs`), declare the `leftMenuPanel` control:
+
+```csharp
+private LeftMenuPanelLibrary.LeftMenuPanel leftMenuPanel;
+```
+
+### 3. Initialize the LeftMenuPanel
+
+Inside the `InitializeComponent` method, before setting up `panel1`, create and configure the `leftMenuPanel`:
+
+The InitializeComponent can be viewed by double clicking on it
+```csharp
+namespace YourApp
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent(); // Inside of here, if there is no drag and drop file availiable 
+        }
+    }
+```
+
+Next:
+
+```csharp
+
+//
+// leftMenuPanel
+//
+leftMenuPanel = new LeftMenuPanel();
+
+leftMenuPanel = new LeftMenuPanelLibrary.LeftMenuPanel();
+leftMenuPanel.AutoSize = true;
+leftMenuPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+leftMenuPanel.CollapsedWidth = 60;
+leftMenuPanel.ExpandedWidth = 200;
+leftMenuPanel.Dock = DockStyle.Left;
+leftMenuPanel.MenuFilePath = "FilePath.JSON"; // Add your actual file path
+leftMenuPanel.MenuImagePath = "Folder Name Of Icons"; // Add your actual image folder path
+leftMenuPanel.Name = "leftMenuPanel";
+leftMenuPanel.Size = new Size(227, 450);
+leftMenuPanel.TabIndex = 0;
+```
+
+### 4. Adjust the Main Panel to the Right of the Menu
+
+Modify `panel1` so it docks to fill the remaining space **after** the menu:
+
+```csharp
+panel1.Dock = DockStyle.Fill;
+panel1.Location = new Point(227, 0); // Shift right to leave space for menu
+```
+
+### 5. Add Controls to the Form
+
+Finally, in the `Form1` constructor or `InitializeComponent`, ensure the controls are added in the correct order:
+
+```csharp
+this.Controls.Add(panel1); // Main content
+this.Controls.Add(leftMenuPanel); // Left menu panel
+```
+Now after that if you go and look into the design folder you will be able to see the UI just like you are doing the drag and drop component
+### 6. Build and Run
+
+
+Run the application. You should see:
+* A collapsible left menu on the left.
+* Main content panel occupying the rest of the form.
+
+
 ### JSON Structure
 
 The menu data should be structured as follows:
@@ -300,91 +390,5 @@ The library implements error handling for common scenarios:
 4. **Layout issues**: Ensure proper container sizing and docking properties
 
 
--------------------------------------------------------------------------------------
-# WinFormsApp1 - LeftMenuPanel Integration Manually Adding to InitializeComponent
+---
 
-This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
-
-## Prerequisites
-
-- Visual Studio
-- .NET 6 or later (or compatible WinForms project)
-- Reference to LeftMenuPanelLibrary (either DLL or project reference)
-- FontAwesome.Sharp NuGet package
-
-## Steps to Add LeftMenuPanel When there is no Drag and Drop leftmenuPanel avaliable
-
-### 1. Add the Required Libraries
-
-
-### 2. Declare the LeftMenuPanel Control
-
-In the `Form1` partial class (inside `Form1.Designer.cs`), declare the `leftMenuPanel` control:
-
-```csharp
-private LeftMenuPanelLibrary.LeftMenuPanel leftMenuPanel;
-```
-
-### 3. Initialize the LeftMenuPanel
-
-Inside the `InitializeComponent` method, before setting up `panel1`, create and configure the `leftMenuPanel`:
-
-The InitializeComponent can be viewed by double clicking on it
-```csharp
-namespace YourApp
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent(); // Inside of here, if there is no drag and drop file availiable 
-        }
-    }
-```
-
-Next:
-
-```csharp
-
-//
-// leftMenuPanel
-//
-leftMenuPanel = new LeftMenuPanel();
-
-leftMenuPanel = new LeftMenuPanelLibrary.LeftMenuPanel();
-leftMenuPanel.AutoSize = true;
-leftMenuPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-leftMenuPanel.CollapsedWidth = 60;
-leftMenuPanel.ExpandedWidth = 200;
-leftMenuPanel.Dock = DockStyle.Left;
-leftMenuPanel.MenuFilePath = "FilePath..."; // Add your actual file path
-leftMenuPanel.MenuImagePath = "Folder Name..."; // Add your actual image folder path
-leftMenuPanel.Name = "leftMenuPanel";
-leftMenuPanel.Size = new Size(227, 450);
-leftMenuPanel.TabIndex = 0;
-```
-
-### 4. Adjust the Main Panel to the Right of the Menu
-
-Modify `panel1` so it docks to fill the remaining space **after** the menu:
-
-```csharp
-panel1.Dock = DockStyle.Fill;
-panel1.Location = new Point(227, 0); // Shift right to leave space for menu
-```
-
-### 5. Add Controls to the Form
-
-Finally, in the `Form1` constructor or `InitializeComponent`, ensure the controls are added in the correct order:
-
-```csharp
-this.Controls.Add(panel1); // Main content
-this.Controls.Add(leftMenuPanel); // Left menu panel
-```
-Now after that if you go and look into the design folder you will be able to see the UI just like you are doing the drag and drop component
-### 6. Build and Run
-
-
-Run the application. You should see:
-* A collapsible left menu on the left.
-* Main content panel occupying the rest of the form.
