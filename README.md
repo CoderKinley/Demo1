@@ -16,11 +16,9 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 - Tooltips for collapsed view, and if there are furthur nestings
 
 --
+# WinFormSideMenuControl Solution
 ## Content 
 ![image](https://github.com/user-attachments/assets/2ffd1d21-d9ec-4da2-8f45-b53a5bd7d70f)
-# WinFormSideMenuControl Solution
-## About the Folder Structure
-# LeftMenuPanelLibrary
 
 This library provides a customizable left-side menu panel component for WinForms applications, structured in a modular and maintainable way.
 
