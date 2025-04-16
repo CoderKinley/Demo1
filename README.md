@@ -221,7 +221,7 @@ private void LeftMenuPanel_MenuItemClicked(object sender, MenuItemEventArgs e)
 }
 ```
 ---
-# WinFormsApp1 - LeftMenuPanel Integration Manually Adding to InitializeComponent
+# Manually Adding to InitializeComponent 
 
 This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary into a Windows Forms Application.
 
