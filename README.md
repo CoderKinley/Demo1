@@ -408,12 +408,8 @@ This library uses a **relational data model** to manage hierarchical menu struct
 |          | `items`       | Optional nested children in JSON format    |
 | `items`  | `title`       | Title of a submenu item                    |
 |          | `icon`        | Icon for the submenu                      |
-|          | `ParentJsonPath` | Path to parent item (e.g., `root.items[0]`) |
+|          | `ParentJsonPath` | Path to parent item (e.g., `menu[0].items[0]`) |
 |          | `items`       | JSON array of further nested items         |
 
-### ✅ Benefits of This Approach
 
-- ✅ Clean separation between flat database structure and nested menu layout
-- ✅ Supports arbitrary depth using JSON recursion
-- ✅ Easy to extend or query using SQL for flat views
 
