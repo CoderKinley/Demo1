@@ -122,17 +122,14 @@ namespace YourApplication
 {
     public partial class YourApplicationForm : Form
     {
-
         leftMenuPanel = LeftMenuPanel();
 
         public YourApplicationForm()
         {
-          
             InitializeComponent();
             LoadLeftPanel();
-           
-
         }
+
         private void LoadLeftPanel()
         {
             leftMenuPanel = new LeftMenuPanel()
@@ -144,7 +141,6 @@ namespace YourApplication
             this.Controls.Add(leftMenuPanel); // Adds to the UI
             leftMenuPanel.LoadMenu(); // To load the left Menupanel
         }
-
     }
 }
 ```
@@ -240,7 +236,6 @@ This guide explains how to integrate the LeftMenuPanel from LeftMenuPanelLibrary
 
 ### 1. Add the Required Libraries
 
-
 ### 2. Declare the LeftMenuPanel Control
 
 In the `Form1` partial class (inside `Form1.Designer.cs`), declare the `leftMenuPanel` control:
@@ -269,7 +264,6 @@ namespace YourApp
 Next:
 
 ```csharp
-
 //
 // leftMenuPanel
 //
@@ -305,14 +299,14 @@ Finally, in the `Form1` constructor or `InitializeComponent`, ensure the control
 this.Controls.Add(panel1); // Main content
 this.Controls.Add(leftMenuPanel); // Left menu panel
 ```
-Now after that if you go and look into the design folder you will be able to see the UI just like you are doing the drag and drop component
-### 6. Build and Run
 
+Now after that if you go and look into the design folder you will be able to see the UI just like you are doing the drag and drop component
+
+### 6. Build and Run
 
 Run the application. You should see:
 * A collapsible left menu on the left.
 * Main content panel occupying the rest of the form.
-
 
 ### JSON Structure
 
@@ -349,6 +343,7 @@ The menu data should be structured as follows:
   ]
 }
 ```
+
 ## Implementation Details
 
 ### Core Components
@@ -388,7 +383,3 @@ The library implements error handling for common scenarios:
 2. **Icons not showing**: Verify the icon paths in your JSON are correct and accessible
 3. **Animation stuttering**: Reduce complexity of your menu structure or adjust animation speed
 4. **Layout issues**: Ensure proper container sizing and docking properties
-
-
----
-
