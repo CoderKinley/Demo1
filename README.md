@@ -115,7 +115,20 @@ dotnet add package FontAwesome.Sharp
 
 ## Usage
 
+## 1. Drag and Drop from ToolBox
+if there is leftMenupanel availiable in your tool box you can simpley start to use after drag and drop.
+
+### Step 1. After you have Downlaod all the resource, Build your project once.
+Now when you click on your form design the tool box besides shows the different Components.
+Search for the LeftMenuPanelLibrary
+
+### Step 2. Drag and Drop the LeftMenuPanel into your project form
+drag and drop the LeftMenuPanel Compontnt
+
+
+
 ### Adding the Control to Your Form
+Now to implement the library you simply have to use the namespace, and then follow like the code snipet below
 
 ```csharp
 using LeftMenuPanelLibrary
@@ -124,17 +137,17 @@ namespace YourApplication
 {
     public partial class YourApplicationForm : Form
     {
-        leftMenuPanel = LeftMenuPanel();
+        leftMenuPanel = LeftMenuPanel(); // defining in the class level
 
         public YourApplicationForm()
         {
             InitializeComponent();
-            LoadLeftPanel();
+            LoadLeftPanel(); // initializing teh left menu panel
         }
 
         private void LoadLeftPanel()
         {
-            leftMenuPanel = new LeftMenuPanel()
+            leftMenuPanel = new LeftMenuPanel() // setting up the initial values of the leftmenu panel
             {
                 Dock = DockStyle.Left,
                 ExpandedWidth = 250,
@@ -312,7 +325,7 @@ Run the application. You should see:
 
 ### JSON Structure
 
-The menu data should be structured as follows:
+The menu data should be structured as follows containing title, icons, items containing the nested list:
 
 ```json
 {
@@ -427,6 +440,7 @@ More About the Model Refer:
 ##  Relational Menu Model
 
 This library uses a **relational data model** to manage hierarchical menu structures, supporting main menu items and nested submenu items with support for multiple depths.
+
 
 ###  How It Works
 
