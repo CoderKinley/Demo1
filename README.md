@@ -116,18 +116,33 @@ dotnet add package FontAwesome.Sharp
 ## Usage
 
 ## 1. Drag and Drop from ToolBox
-if there is leftMenupanel availiable in your tool box you can simpley start to use after drag and drop.
+- if there is leftMenupanel availiable in your tool box you can simpley start to use after drag and drop.
 
 ### Step 1. After you have Downlaod all the resource, Build your project once.
-Now when you click on your form design the tool box besides shows the different Components.
-Search for the LeftMenuPanelLibrary
+- Now when you click on your form design the tool box besides shows the different Components.
+- Search for the LeftMenuPanelLibrary
+![WhatsApp Image 2025-04-16 at 18 38 48](https://github.com/user-attachments/assets/3021472d-7201-47cf-ae78-f4b655463a78)
 
 ### Step 2. Drag and Drop the LeftMenuPanel into your project form
-drag and drop the LeftMenuPanel Compontnt
+- drag and drop the LeftMenuPanel Compontnt
+![WhatsApp Image 2025-04-16 at 18 39 27](https://github.com/user-attachments/assets/dd461306-f349-44e2-a141-44c216610944)
+### Step 3. Dock the Leftmenu to Left 
+- Click on the LeftMenuPanel and then under the properties
+- Dock it to the Left
+![WhatsApp Image 2025-04-16 at 18 40 16](https://github.com/user-attachments/assets/0f01ffe7-62c2-4ab4-befe-1bc71ac98533)
 
+### Step 4. Set the other Initial parameters
+- Under the properties and `misc` 
+- you can set the ImageIcon folder path and the JSON File path
+- The Path of teh images should include only the Folder Derictory to which the image belong 
+- example. `Resource/Icons `
+- The Path of the JSON should be the full file path
+- example  `Recource/Json/your_json.json`.
+ ![WhatsApp Image 2025-04-16 at 18 40 53](https://github.com/user-attachments/assets/1b9536cf-df58-4c80-aa4d-3d4bfb26df6c)
+  
 
-
-### Adding the Control to Your Form
+--- 
+### Adding the Control to Your Form in Code
 Now to implement the library you simply have to use the namespace, and then follow like the code snipet below
 
 ```csharp
