@@ -15,7 +15,8 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 - Responsive design with scrollbars when needed
 - Tooltips for collapsed view, and if there are furthur nestings
 
---
+---
+
 # WinFormSideMenuControl Solution
 ## Content 
 ![image](https://github.com/user-attachments/assets/2ffd1d21-d9ec-4da2-8f45-b53a5bd7d70f)
