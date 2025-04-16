@@ -1,6 +1,6 @@
 # LeftMenuPanel Control Library
 
-A custom WinForms control library for .NET 8 that provides a dynamic, collapsible left-side menu panel with nested menu items. The menu supports dark mode, smooth animations, and is populated from JSON data.
+A custom WinForms control library for .NET 8 that provides a dynamic, collapsible left-side menu panel with nested menu items. The menu supports dark mode, smooth animations, and is populated from raw JSON data using C1.AdoNet.Json Library from the Component One UI.
 
 ## Overview
 
@@ -9,42 +9,15 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 - Collapsible menu panel with hamburger icon toggle
 - Support for nested menu items (up to 2 levels deep)
 - Icons and text for all menu items
-- Dynamic population from JSON data source
-- Dark mode toggle
-- Smooth animations
+- Dynamic population from JSON data source Using C1.AdoNet.Json Library
+- Dark/Light mode toggle
+- Smooth Animating Side Panel
 - Responsive design with scrollbars when needed
-- Tooltips for collapsed view
+- Tooltips for collapsed view, and if there are furthur nestings
 
-## Installation
-
-### Option 1: NuGet Package
-
-```
-Install-Package LeftMenuPanel
-```
-
-🧩 Option 1: If the GitHub library contains source code (.cs files)
-
-Download/Clone the Repository
-
-If you haven't already, download the GitHub repo as ZIP or clone it using Git:
-
-bashgit clone https://github.com/username/repo-name.git
-
-Add Existing Project or Files
-
-Open your WinForms project in Visual Studio.
-If the repo is a separate project:
-
-Right-click on your solution → Add → Existing Project → select the .csproj file.
-Then, right-click your WinForms project → Add → Project Reference → check the newly added project.
-
-
-If it's just a set of .cs files:
-
-Right-click your project → Add → Existing Item → select the .cs files you need.
-## Option 2: Using a Precompiled DLL Library
-
+----
+#Might be Used in Nuget package
+## Installatio
 # Adding a DLL Reference - Detailed Steps
 ### Step 1: Organize Your Library Files
 1. Create a dedicated folder in your project (recommended):
@@ -286,16 +259,9 @@ menuPanel.ActiveItemColor = Color.FromArgb(97, 175, 254);
 3. **JsonMenuLoader**: Handles loading and parsing of menu data from JSON
 4. **MenuCollapseManager**: Manages the collapse/expand behavior and animations
 
-### Design Patterns Used
-
-- **Factory Pattern**: For creating menu item controls from JSON data
-- **Observer Pattern**: For notifying subscribers about menu item clicks
-- **Strategy Pattern**: For handling different menu item types and behaviors
-- **Decorator Pattern**: For adding visual effects to menu items (hover, active state)
-
 ### Error Handling
 
-The library implements robust error handling for common scenarios:
+The library implements error handling for common scenarios:
 
 1. **Invalid JSON**: Graceful error messages when JSON cannot be parsed
 2. **Missing Icons**: Fallback to default icons when specified icons are not found
@@ -323,14 +289,6 @@ The library implements robust error handling for common scenarios:
 2. **Icons not showing**: Verify the icon paths in your JSON are correct and accessible
 3. **Animation stuttering**: Reduce complexity of your menu structure or adjust animation speed
 4. **Layout issues**: Ensure proper container sizing and docking properties
-
-### Debug Logging
-
-Enable debug logging for troubleshooting:
-
-```csharp
-menuPanel.EnableDebugLogging = true;
-```
 
 
 -------------------------------------------------------------------------------------
