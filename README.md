@@ -167,47 +167,6 @@ The menu data should be structured as follows:
   ]
 }
 ```
-
-### Event Handling
-
-To handle menu item clicks:
-
-```csharp
-menuPanel.MenuItemClicked += (sender, e) => {
-    // e.MenuItemId contains the ID of the clicked item
-    // e.Text contains the text of the clicked item
-    Console.WriteLine($"Menu item clicked: {e.Text} (ID: {e.MenuItemId})");
-    
-    // Update your main content area based on the selected menu item
-    UpdateMainContent(e.MenuItemId);
-};
-```
-
-### Customization
-
-#### Toggle Dark Mode
-
-```csharp
-menuPanel.DarkMode = true; // or false for light mode
-```
-
-#### Programmatically Collapse/Expand
-
-```csharp
-menuPanel.Collapsed = true; // Collapse the menu
-menuPanel.Collapsed = false; // Expand the menu
-```
-
-#### Custom Colors
-
-```csharp
-// Set custom colors for the menu
-menuPanel.BackgroundColor = Color.FromArgb(40, 44, 52);
-menuPanel.TextColor = Color.White;
-menuPanel.HoverColor = Color.FromArgb(61, 67, 79);
-menuPanel.ActiveItemColor = Color.FromArgb(97, 175, 254);
-```
-
 ## Implementation Details
 
 ### Core Components
