@@ -24,20 +24,36 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 ### Adding the Control to Your Form
 
 ```csharp
-using LeftMenuPanel;
+using LeftMenuPanelLibrary
 
-// In your Form's constructor or InitializeComponent method
-private void InitializeComponent()
+namespace YourApplication
 {
-    // Other form initialization code
-    
-    // Create the menu panel
-    var menuPanel = new LeftMenuPanel.MenuPanel();
-    menuPanel.Dock = DockStyle.Left;
-    this.Controls.Add(menuPanel);
-    
-    // Load menu from JSON
-    menuPanel.LoadMenuFromJson("path/to/your/menu.json");
+    public partial class YourApplicationForm : Form
+    {
+
+        leftMenuPanel = LeftMenuPanel();
+
+        public YourApplicationForm()
+        {
+          
+            InitializeComponent();
+            LoadLeftPanel();
+           
+
+        }
+        private void LoadLeftPanel()
+        {
+            leftMenuPanel = new LeftMenuPanel()
+            {
+                Dock = DockStyle.Left,
+                ExpandedWidth = 250,
+                CollapsedWidth = 60
+            }
+            this.Controls.Add(leftMenuPanel); // Adds to the UI
+            leftMenuPanel.LoadMenu(); // To load the left Menupanel
+        }
+
+    }
 }
 ```
 ## LeftMenuPanel Configuration
