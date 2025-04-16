@@ -80,26 +80,16 @@ After cloning the repository from Bitbucket and opening the solution in Visual S
 
 This provides a practical example of how to integrate the LeftMenuPanelLibrary into your own WinForms applications.
 
-### Installing Other required Nuget Packages
+### Installing Other required Nuget Packages 
+Before building the project following nuget packages must be installed
 
 This Following packages must be installed into your packages
-- `C1.AdoNet.Json`
 - `FontAwesome.Sharp`
 ---
 ## Installing NuGet Packages
 To ensure all necessary libraries are available, install the following NuGet packages:
 ---
-### 1. **C1.AdoNet.Json**
-This package provides ADO.NET support for JSON data sources.
-#### Install via Package Manager Console:
-```powershell
-Install-Package C1.AdoNet.Json
-```
-Or via .NET CLI:
-```bash
-dotnet add package C1.AdoNet.Json
-```
-### 2. **FontAwesome.Sharp**
+### 1. **FontAwesome.Sharp**
 This package allows you to use FontAwesome icons in your WinForms app.
 #### Install via Package Manager Console:
 ```powershell
@@ -379,6 +369,46 @@ The library implements error handling for common scenarios:
 3. **Animation stuttering**: Reduce complexity of your menu structure or adjust animation speed
 4. **Layout issues**: Ensure proper container sizing and docking properties
 
+# About C1.AdoNet.Json Library
+
+The ADO.NET provider for JSON provides a wide range of features that enable connectivity to JSON from .NET applications.  
+The link below provides the documentation for the library used to parse the JSON file:
+
+👉 [C1.AdoNet.Json Documentation](https://developer.mescius.com/componentone/docs/services/online-dataconnector/jsongettingstarted.html)
+
+## JSON Data Models Supported
+
+The JSON provider in this library supports **three distinct data modeling strategies** for interpreting and transforming JSON documents into usable table-like structures. These models allow JSON object arrays to be represented as structured data, including support for custom JsonPath definitions to precisely extract arrays for modeling.
+
+### 1. Top-level Document Model
+
+
+## JSON Data Models Supported
+
+The JSON provider in this library supports **three distinct data modeling strategies** for interpreting and transforming JSON documents into usable table-like structures. These models allow JSON object arrays to be represented as structured data, including support for custom JsonPath definitions to precisely extract arrays for modeling.
+
+### 1.  Top-level Document Model
+
+- Represents each top-level object as a single row.
+- Any nested arrays are preserved and returned as raw JSON strings within their parent rows.
+- Useful when maintaining the full JSON hierarchy is important for serialization or further parsing.
+
+### 2. Flattened Model
+
+- Automatically flattens nested arrays by merging them into a single table.
+- Each element in the array becomes an individual row, simplifying access and analysis.
+- Ideal for simple reporting or data grid views where relational links aren't required.
+
+### 3. Relational Model
+
+- Preserves the natural relational structure of the JSON document.
+- Nested arrays are treated as related child tables.
+- This model reflects parent-child relationships, making it suitable for scenarios like hierarchical menus or tree structures.
+
+>  You can use `JsonPath` to explicitly define which parts of the JSON to interpret as tables under any of these models.
+
+More About the Model Refer:
+📄 [More on JSON Data Models](https://developer.mescius.com/componentone/docs/services/online-dataconnector/jsondatamodels.html)
 
 ##  Relational Menu Model
 
