@@ -24,7 +24,7 @@ The LeftMenuPanel control is designed to provide a modern, user-friendly navigat
 
 This library provides a customizable left-side menu panel component for WinForms applications, structured in a modular and maintainable way.
 
-## 📁 Folder Structure Overview
+## Folder Structure Overview
 
 The project follows a clean, component-oriented folder layout:
 
