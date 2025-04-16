@@ -383,3 +383,42 @@ The library implements error handling for common scenarios:
 2. **Icons not showing**: Verify the icon paths in your JSON are correct and accessible
 3. **Animation stuttering**: Reduce complexity of your menu structure or adjust animation speed
 4. **Layout issues**: Ensure proper container sizing and docking properties
+
+
+##  Relational Menu Model
+
+This library uses a **relational data model** to manage hierarchical menu structures, supporting main menu items and nested submenu items with support for multiple depths.
+
+###  How It Works
+
+- The `MenuDataService` class implements the `IMenuReader` interface and reads menu definitions from two separate data tables:
+  - **menu** – stores top-level menu entries.
+  - **items** – stores child menu items that may be nested further using JSON.
+
+- The `ReadAllMenuItems()` method:
+  - Fetches rows from both tables.
+  - Parses them into a list of `MenuItemInfo` objects.
+  - Orders them by their hierarchical path to maintain panel order.
+
+- Nested children in the `items` table are stored as **JSON arrays** in the `items` field.
+  - The parser uses recursive logic (`ParseNestedItems`) to build the full tree structure using parent-child `Path` information.
+
+###  Schema Summary
+
+| Table    | Field         | Description                                |
+|----------|---------------|--------------------------------------------|
+| `menu`   | `title`       | Display title of the main menu item        |
+|          | `icon`        | Icon path or identifier                    |
+|          | `ParentJsonPath` | JSON path used for hierarchy              |
+|          | `items`       | Optional nested children in JSON format    |
+| `items`  | `title`       | Title of a submenu item                    |
+|          | `icon`        | Icon for the submenu                      |
+|          | `ParentJsonPath` | Path to parent item (e.g., `root.items[0]`) |
+|          | `items`       | JSON array of further nested items         |
+
+### ✅ Benefits of This Approach
+
+- ✅ Clean separation between flat database structure and nested menu layout
+- ✅ Supports arbitrary depth using JSON recursion
+- ✅ Easy to extend or query using SQL for flat views
+
