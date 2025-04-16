@@ -408,6 +408,7 @@ The JSON provider in this library supports **three distinct data modeling strate
 >  You can use `JsonPath` to explicitly define which parts of the JSON to interpret as tables under any of these models.
 
 More About the Model Refer:
+
 📄 [More on JSON Data Models](https://developer.mescius.com/componentone/docs/services/online-dataconnector/jsondatamodels.html)
 
 ##  Relational Menu Model
